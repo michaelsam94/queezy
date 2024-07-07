@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:queezy/onboarding_two.dart';
+import 'package:queezy/pages/onboarding_two_page.dart';
 
-import 'onboarding_one.dart';
-import 'onboarding_three.dart';
+import 'package:queezy/pages/onboarding_one_page.dart';
+import 'package:queezy/pages/onboarding_three_page.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});

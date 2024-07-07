@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:queezy/background.dart';
+import 'package:queezy/widgets/background.dart';
 import 'package:queezy/utils/spacing.dart';
 import 'package:svg_flutter/svg.dart';
 

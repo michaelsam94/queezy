@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:queezy/utils/colors.dart';
 
-import 'widgets/onboarding.dart';
-import 'widgets/onboarding_card.dart';
+import '../widgets/onboarding.dart';
+import '../widgets/onboarding_card.dart';
 
-class OnboardingTwo extends StatelessWidget {
-  const OnboardingTwo({super.key});
+
+class OnboardingThree extends StatelessWidget {
+  const OnboardingThree({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +14,10 @@ class OnboardingTwo extends StatelessWidget {
         backgroundColor: primaryColor,
         body: Onboarding(
           bgImageName: 'assets/bg_onboarding_two.svg',
-          imageName: 'assets/img_onboarding_two.svg',
-          sliderImageName: 'assets/slider_indicator_two.svg',
+          imageName: 'assets/img_onboarding_three.svg',
+          sliderImageName: 'assets/slider_indicator_three.svg',
           onboardingCard: const OnboardingCard(
-            cardText: 'Find quizzes to test out \n your knowledge',
+            cardText: 'Take part in challenges \n with friends',
           ),
         )
       //Change for different locations

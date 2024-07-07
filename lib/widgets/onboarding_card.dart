@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:queezy/utils/colors.dart';
 import 'package:queezy/utils/spacing.dart';
 import 'package:queezy/utils/styles.dart';
+import 'package:queezy/widgets/primary_button.dart';
 
 class OnboardingCard extends StatelessWidget {
   final String cardText;
@@ -31,20 +32,9 @@ class OnboardingCard extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               verticalSpacing(space: 26),
-              SizedBox(
-                height: 54,
-                child: TextButton(
-                  style: TextButton.styleFrom(
-                      backgroundColor: primaryColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      )),
-                  onPressed: () {},
-                  child: Text(
-                    'Sign up',
-                    style: buttonTextStyle,
-                  ),
-                ),
+              PrimaryButton(
+                title: 'Sign Up',
+                onPressed: () {},
               ),
               verticalSpacing(space: 16),
               Center(

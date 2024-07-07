@@ -33,6 +33,7 @@ dependencies:
   svg_flutter: ^0.0.1
   google_fonts: ^6.2.1
   carousel_slider: ^4.2.1
+  social_login_buttons: ^1.0.7
 
 
   # The following adds the Cupertino Icons font to your application.
