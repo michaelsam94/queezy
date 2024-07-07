@@ -18,7 +18,7 @@ class OnboardingPage extends StatelessWidget {
           enlargeCenterPage: false,
           autoPlay: true,
           autoPlayInterval: const Duration(
-            seconds: 2,
+            seconds: 5,
           )),
       items: const [
         OnboardingOne(),
