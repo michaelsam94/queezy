@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:queezy/utils/colors.dart';
 import 'package:queezy/utils/spacing.dart';
 import 'package:queezy/utils/styles.dart';
 import 'package:queezy/widgets/primary_button.dart';
 
 class OnboardingCard extends StatelessWidget {
+  //ignore: must_be_immutable
   final String cardText;
 
   const OnboardingCard({super.key, required this.cardText});

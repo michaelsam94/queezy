@@ -1,10 +1,11 @@
-import 'dart:async';
+
 
 import 'package:flutter/material.dart';
 import 'package:queezy/pages/enter_email_page.dart';
 import 'package:queezy/pages/enter_password_page.dart';
 import 'package:queezy/pages/enter_username_page.dart';
 import 'package:queezy/pages/forgot_password_page.dart';
+import 'package:queezy/pages/home_page.dart';
 import 'package:queezy/pages/login_or_signup_page.dart';
 import 'package:queezy/pages/login_page.dart';
 import 'package:queezy/pages/onboarding_page.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        '/': (context) => const SplashPage(),
+        '/': (context) => const HomePage(),
         '/onboarding': (context) => const OnboardingPage(),
         '/login_or_signup': (context) => const LoginOrSignupPage(),
         '/login': (context) => const LoginPage(),

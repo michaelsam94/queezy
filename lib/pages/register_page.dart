@@ -7,7 +7,6 @@ import 'package:queezy/widgets/facebook_button.dart';
 import 'package:queezy/widgets/google_button.dart';
 import 'package:queezy/widgets/primary_button_with_icon.dart';
 import 'package:queezy/widgets/terms_text.dart';
-import 'package:social_login_buttons/social_login_buttons.dart';
 import 'package:svg_flutter/svg.dart';
 
 class RegisterPage extends StatelessWidget {

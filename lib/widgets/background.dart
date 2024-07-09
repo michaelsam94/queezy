@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:queezy/utils/colors.dart';
 import 'package:svg_flutter/svg.dart';
 
+// ignore: must_be_immutable
 class Background extends StatelessWidget {
   String imgName;
 

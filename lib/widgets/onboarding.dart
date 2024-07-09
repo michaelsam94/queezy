@@ -5,6 +5,7 @@ import 'package:svg_flutter/svg.dart';
 
 import 'onboarding_card.dart';
 
+// ignore: must_be_immutable
 class Onboarding extends StatelessWidget {
   String bgImageName;
   final String imageName;

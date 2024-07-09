@@ -7,7 +7,6 @@ import 'package:queezy/widgets/progressbar.dart';
 import 'package:svg_flutter/svg.dart';
 
 import '../utils/spacing.dart';
-import '../widgets/email_field.dart';
 import '../widgets/primary_button.dart';
 
 class EnterPasswordPage extends StatelessWidget {

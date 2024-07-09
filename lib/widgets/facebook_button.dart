@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:queezy/utils/colorhex.dart';
-import 'package:queezy/utils/colors.dart';
 import 'package:queezy/utils/styles.dart';
 import 'package:svg_flutter/svg.dart';
 

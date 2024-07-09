@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:queezy/utils/colorhex.dart';
@@ -7,7 +6,6 @@ import 'package:queezy/utils/styles.dart';
 import 'package:queezy/widgets/facebook_button.dart';
 import 'package:queezy/widgets/google_button.dart';
 import 'package:queezy/widgets/login_form.dart';
-import 'package:social_login_buttons/social_login_buttons.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});

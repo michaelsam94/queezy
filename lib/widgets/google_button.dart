@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:queezy/utils/colorhex.dart';
-import 'package:queezy/utils/colors.dart';
-import 'package:queezy/utils/styles.dart';
 import 'package:svg_flutter/svg.dart';
 
 class GoogleButton extends StatelessWidget {
