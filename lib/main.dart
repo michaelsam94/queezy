@@ -1,6 +1,7 @@
-
-
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:queezy/pages/enter_email_page.dart';
 import 'package:queezy/pages/enter_password_page.dart';
 import 'package:queezy/pages/enter_username_page.dart';
@@ -13,10 +14,22 @@ import 'package:queezy/pages/register_page.dart';
 import 'package:queezy/pages/set_new_password_page.dart';
 import 'package:queezy/pages/splash_page.dart';
 import 'package:queezy/utils/colorhex.dart';
+import 'package:queezy/utils/firebase_functions.dart';
 
+import 'firebase_options.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  //await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
+  runApp(
+    Provider(
+      create: (BuildContext context) => FirebaseFunctions(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -34,22 +47,18 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        '/': (context) => const HomePage(),
+        '/': (context) => const SplashPage(),
+        '/home': (context) => const HomePage(),
         '/onboarding': (context) => const OnboardingPage(),
         '/login_or_signup': (context) => const LoginOrSignupPage(),
         '/login': (context) => const LoginPage(),
-        '/forgot_password': (context) => const ForgotPasswordPage(),
-        '/set_new_password': (context) => const SetNewPasswordPage(),
+        '/forgot_password': (context) => ForgotPasswordPage(),
+        '/set_new_password': (context) => SetNewPasswordPage(),
         '/register': (context) => const RegisterPage(),
-        '/enter_email': (context) => const EnterEmailPage(),
-        '/enter_password': (context) => const EnterPasswordPage(),
+        '/enter_email': (context) => EnterEmailPage(),
+        '/enter_password': (context) => EnterPasswordPage(),
         '/enter_username': (context) => const EnterUsernamePage(),
       },
     );
   }
-
 }
-
-
-
-

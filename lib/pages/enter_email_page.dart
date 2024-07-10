@@ -7,7 +7,9 @@ import 'package:queezy/widgets/progressbar.dart';
 import '../utils/styles.dart';
 
 class EnterEmailPage extends StatelessWidget {
-  const EnterEmailPage({super.key});
+  EnterEmailPage({super.key});
+
+  final TextEditingController emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +29,9 @@ class EnterEmailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-
-            const EmailField(),
+            EmailField(
+              controller: emailController,
+            ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -44,7 +47,6 @@ class EnterEmailPage extends StatelessWidget {
                 )
               ],
             ),
-
           ],
         ),
       ),

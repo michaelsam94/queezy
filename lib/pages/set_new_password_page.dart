@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:queezy/widgets/password_field.dart';
 import 'package:queezy/widgets/primary_button.dart';
@@ -6,7 +7,11 @@ import '../utils/spacing.dart';
 import '../utils/styles.dart';
 
 class SetNewPasswordPage extends StatelessWidget {
-  const SetNewPasswordPage({super.key});
+  SetNewPasswordPage({super.key});
+
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,14 +40,16 @@ class SetNewPasswordPage extends StatelessWidget {
                   textAlign: TextAlign.left,
                 ),
                 verticalSpacing(space: 24),
-                const PasswordField(
+                PasswordField(
                   label: 'Password',
                   hint: 'Your password',
+                  controller: passwordController,
                 ),
                 verticalSpacing(space: 24),
-                const PasswordField(
+                PasswordField(
                   label: 'Confirm Password',
                   hint: 'Confirm your password',
+                  controller: confirmPasswordController,
                 ),
                 verticalSpacing(space: 24),
               ],

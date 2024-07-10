@@ -7,7 +7,10 @@ import '../utils/colorhex.dart';
 import '../utils/spacing.dart';
 
 class EmailField extends StatelessWidget {
-  const EmailField({super.key});
+  final FormFieldValidator<String>? validator;
+  final TextEditingController controller;
+
+  const EmailField({super.key, this.validator, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +27,12 @@ class EmailField extends StatelessWidget {
           ),
         ),
         verticalSpacing(space: 8),
-        TextField(
+        TextFormField(
           keyboardType: TextInputType.emailAddress,
+          validator: (value) {
+            if (validator != null) return validator!(value);
+          },
+          controller: controller,
           decoration: InputDecoration(
             iconColor: primaryColor,
             prefixIcon: SvgPicture.asset(
@@ -43,7 +50,7 @@ class EmailField extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            border:  OutlineInputBorder(
+            border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
               borderSide: const BorderSide(
                 color: Colors.white,

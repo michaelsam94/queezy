@@ -10,7 +10,9 @@ import '../utils/spacing.dart';
 import '../widgets/primary_button.dart';
 
 class EnterPasswordPage extends StatelessWidget {
-  const EnterPasswordPage({super.key});
+  EnterPasswordPage({super.key});
+
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +35,10 @@ class EnterPasswordPage extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const PasswordField(
+                PasswordField(
                   label: 'Password',
                   hint: 'Your password',
+                  controller: passwordController,
                 ),
                 verticalSpacing(space: 16),
                 Row(

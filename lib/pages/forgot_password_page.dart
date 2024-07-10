@@ -5,7 +5,9 @@ import 'package:queezy/widgets/email_field.dart';
 import 'package:queezy/widgets/primary_button.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
-  const ForgotPasswordPage({super.key});
+  ForgotPasswordPage({super.key});
+
+  final TextEditingController emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,9 @@ class ForgotPasswordPage extends StatelessWidget {
                   textAlign: TextAlign.left,
                 ),
                 verticalSpacing(space: 24),
-                const EmailField(),
+                EmailField(
+                  controller: emailController,
+                ),
               ],
             ),
             PrimaryButton(

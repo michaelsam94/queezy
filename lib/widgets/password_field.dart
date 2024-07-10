@@ -9,8 +9,16 @@ import '../utils/spacing.dart';
 class PasswordField extends StatefulWidget {
   final String label;
   final String hint;
+  final FormFieldValidator<String>? validator;
+  final TextEditingController controller;
 
-  const PasswordField({super.key, required this.label, required this.hint});
+  const PasswordField({
+    Key? key,
+    required this.label,
+    required this.hint,
+    this.validator,
+    required this.controller,
+  }) : super(key: key);
 
   @override
   State<PasswordField> createState() => _PasswordFieldState();
@@ -40,10 +48,12 @@ class _PasswordFieldState extends State<PasswordField> {
           ),
         ),
         verticalSpacing(space: 8),
-        TextField(
+        TextFormField(
           obscureText: !_passwordVisible,
           enableSuggestions: false,
           autocorrect: false,
+          controller: widget.controller,
+          validator: widget.validator,
           decoration: InputDecoration(
             iconColor: primaryColor,
             prefixIcon: SvgPicture.asset(
@@ -59,7 +69,8 @@ class _PasswordFieldState extends State<PasswordField> {
                 });
               },
               child: Icon(
-                  _passwordVisible ? Icons.visibility : Icons.visibility_off),
+                _passwordVisible ? Icons.visibility : Icons.visibility_off,
+              ),
             ),
             hintText: widget.hint,
             fillColor: Colors.white,
@@ -67,7 +78,7 @@ class _PasswordFieldState extends State<PasswordField> {
             hintStyle: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.normal,
-              color: ColorHex('#858494'),
+              color: Color(0xFF858494),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),

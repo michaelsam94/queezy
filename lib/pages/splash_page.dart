@@ -2,7 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:queezy/utils/colors.dart';
+import 'package:queezy/utils/firebase_functions.dart';
 import 'package:svg_flutter/svg.dart';
 
 class SplashPage extends StatefulWidget {
@@ -16,8 +18,15 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3),
-          () => Navigator.pushReplacementNamed(context, '/login_or_signup'),
+    Timer(
+      const Duration(seconds: 3),
+      () {
+        if (context.read<FirebaseFunctions>().getUser() == null) {
+          Navigator.pushReplacementNamed(context, '/login_or_signup');
+        } else {
+          Navigator.pushReplacementNamed(context, '/home');
+        }
+      },
     );
   }
 

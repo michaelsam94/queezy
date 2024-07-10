@@ -50,7 +50,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               verticalSpacing(space: 24),
-              const LoginForm(),
+              LoginForm(),
             ],
           ),
         ),
