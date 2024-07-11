@@ -7,7 +7,10 @@ import '../utils/colorhex.dart';
 import '../utils/spacing.dart';
 
 class UsernameField extends StatelessWidget {
-  const UsernameField({super.key});
+  FormFieldValidator<String>? validator;
+  TextEditingController controller;
+
+  UsernameField({super.key, this.validator, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,9 @@ class UsernameField extends StatelessWidget {
           ),
         ),
         verticalSpacing(space: 8),
-        TextField(
+        TextFormField(
+          controller: controller,
+          validator: validator,
           keyboardType: TextInputType.text,
           decoration: InputDecoration(
             iconColor: primaryColor,
@@ -43,7 +48,7 @@ class UsernameField extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            border:  OutlineInputBorder(
+            border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
               borderSide: const BorderSide(
                 color: Colors.white,

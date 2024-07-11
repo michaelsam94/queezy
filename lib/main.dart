@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,8 +12,9 @@ import 'package:queezy/pages/onboarding_page.dart';
 import 'package:queezy/pages/register_page.dart';
 import 'package:queezy/pages/set_new_password_page.dart';
 import 'package:queezy/pages/splash_page.dart';
+import 'package:queezy/states/signup_state.dart';
 import 'package:queezy/utils/colorhex.dart';
-import 'package:queezy/utils/firebase_functions.dart';
+import 'package:queezy/services/auth_service.dart';
 
 import 'firebase_options.dart';
 
@@ -25,8 +25,11 @@ void main() async {
   );
   //await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
   runApp(
-    Provider(
-      create: (BuildContext context) => FirebaseFunctions(),
+    MultiProvider(
+      providers: [
+        Provider(create: (BuildContext context) => AuthService()),
+        Provider(create: (BuildContext context) => SignupState()),
+      ],
       child: const MyApp(),
     ),
   );
@@ -51,13 +54,13 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const HomePage(),
         '/onboarding': (context) => const OnboardingPage(),
         '/login_or_signup': (context) => const LoginOrSignupPage(),
-        '/login': (context) => const LoginPage(),
+        '/login': (context) => LoginPage(),
         '/forgot_password': (context) => ForgotPasswordPage(),
         '/set_new_password': (context) => SetNewPasswordPage(),
         '/register': (context) => const RegisterPage(),
         '/enter_email': (context) => EnterEmailPage(),
         '/enter_password': (context) => EnterPasswordPage(),
-        '/enter_username': (context) => const EnterUsernamePage(),
+        '/enter_username': (context) => EnterUsernamePage(),
       },
     );
   }

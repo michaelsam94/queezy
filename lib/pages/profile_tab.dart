@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:queezy/utils/firebase_functions.dart';
+import 'package:queezy/services/auth_service.dart';
 import 'package:queezy/utils/spacing.dart';
 
 import '../widgets/primary_button.dart';
@@ -20,7 +20,7 @@ class ProfileTab extends StatelessWidget {
             PrimaryButton(
                 title: 'Logout',
                 onPressed: () async {
-                  context.read<FirebaseFunctions>().logout();
+                  context.read<AuthService>().logout();
                   Navigator.pushReplacementNamed(context, '/login_or_signup');
                 })
           ],

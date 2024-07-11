@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:queezy/utils/colors.dart';
-import 'package:queezy/utils/firebase_functions.dart';
+import 'package:queezy/services/auth_service.dart';
 import 'package:svg_flutter/svg.dart';
 
 class SplashPage extends StatefulWidget {
@@ -21,7 +21,7 @@ class _SplashPageState extends State<SplashPage> {
     Timer(
       const Duration(seconds: 3),
       () {
-        if (context.read<FirebaseFunctions>().getUser() == null) {
+        if (context.read<AuthService>().getUser() == null) {
           Navigator.pushReplacementNamed(context, '/login_or_signup');
         } else {
           Navigator.pushReplacementNamed(context, '/home');

@@ -187,7 +187,7 @@ class HomeTab extends StatelessWidget {
                     color: Colors.white),
                 child: Padding(
                   padding: const EdgeInsets.all(24.0),
-                  child: Column(
+                  child: ListView(
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

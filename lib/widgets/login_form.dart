@@ -1,7 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:queezy/utils/firebase_functions.dart';
 import 'package:queezy/utils/spacing.dart';
 import 'package:queezy/utils/utils.dart';
 import 'package:queezy/widgets/email_field.dart';
@@ -11,28 +8,21 @@ import 'package:queezy/widgets/terms_text.dart';
 import 'package:queezy/widgets/transparent_button_primary_text.dart';
 
 class LoginForm extends StatelessWidget {
-  LoginForm({super.key});
-
-  final _formKey = GlobalKey<FormState>();
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-
-  void loginUser(BuildContext context) async {
-    if (_formKey.currentState != null && _formKey.currentState!.validate()) {
-      print(emailController.text);
-      print(passwordController.text);
-      UserCredential? credential = await context
-          .read<FirebaseFunctions>()
-          .signIn(
-              email: emailController.text, password: passwordController.text);
-      if (credential != null) Navigator.pushReplacementNamed(context, '/home');
-    }
-  }
+  final GlobalKey<FormState> formKey;
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
+  VoidCallback onLoginPress;
+  LoginForm(
+      {super.key,
+      required this.formKey,
+      required this.emailController,
+      required this.passwordController,
+      required this.onLoginPress});
 
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: _formKey,
+      key: formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -63,7 +53,7 @@ class LoginForm extends StatelessWidget {
           PrimaryButton(
             title: 'Login',
             onPressed: () {
-              loginUser(context);
+              onLoginPress();
             },
           ),
           verticalSpacing(space: 24),
