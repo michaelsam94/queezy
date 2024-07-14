@@ -63,10 +63,14 @@ final TextStyle titleTextStyleBlack = GoogleFonts.rubik(
   color: ColorHex('#0C092A'),
 );
 
+final TextStyle titleTextStyleWhite = GoogleFonts.rubik(
+  fontSize: 24,
+  fontWeight: FontWeight.w500,
+  color: Colors.white,
+);
+
 final TextStyle smallTextStyleGray = GoogleFonts.rubik(
   fontSize: 16,
   fontWeight: FontWeight.normal,
   color: ColorHex('#858494'),
 );
-
-
