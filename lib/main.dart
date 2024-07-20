@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:queezy/pages/choose_category_page.dart';
+import 'package:queezy/pages/create_quiz_page.dart';
 import 'package:queezy/pages/enter_email_page.dart';
 import 'package:queezy/pages/enter_password_page.dart';
 import 'package:queezy/pages/enter_username_page.dart';
@@ -61,6 +63,8 @@ class MyApp extends StatelessWidget {
         '/enter_email': (context) => EnterEmailPage(),
         '/enter_password': (context) => EnterPasswordPage(),
         '/enter_username': (context) => EnterUsernamePage(),
+        '/create_quiz': (context) => CreateQuizPage(),
+        '/choose_category': (context) => ChooseCategoryPage(),
       },
     );
   }

@@ -51,8 +51,26 @@ final TextStyle rubikMedium16RichBlack = GoogleFonts.rubik(
   color: ColorHex('#0C092A'),
 );
 
+final TextStyle rubikMedium16Primary = GoogleFonts.rubik(
+  fontSize: 16,
+  fontWeight: FontWeight.w500,
+  color: ColorHex('#6A5AE0'),
+);
+
+final TextStyle rubik12Primary = GoogleFonts.rubik(
+  fontSize: 12,
+  fontWeight: FontWeight.normal,
+  color: ColorHex('#6A5AE0'),
+);
+
 final TextStyle rubik14RomanSilver = GoogleFonts.rubik(
   fontSize: 14,
+  fontWeight: FontWeight.normal,
+  color: ColorHex('#858494'),
+);
+
+final TextStyle rubik16RomanSilver = GoogleFonts.rubik(
+  fontSize: 16,
   fontWeight: FontWeight.normal,
   color: ColorHex('#858494'),
 );

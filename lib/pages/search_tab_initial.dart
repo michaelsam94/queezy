@@ -38,6 +38,7 @@ class _SearchTabInitialState extends State<SearchTabInitial> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
+        width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [primaryColor, Colors.white],
@@ -54,7 +55,9 @@ class _SearchTabInitialState extends State<SearchTabInitial> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/bg_top_pick.png'),
+                  fit: BoxFit.cover,
                 ),
+                borderRadius: BorderRadius.circular(24),
               ),
               child: SizedBox(
                 height: 163,

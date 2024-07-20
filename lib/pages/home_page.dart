@@ -106,7 +106,9 @@ class _HomePageState extends State<HomePage> {
         child: FloatingActionButton(
           shape: const CircleBorder(),
           backgroundColor: primaryColor,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/create_quiz');
+          },
           elevation: 0,
           child: const Icon(
             Icons.add,

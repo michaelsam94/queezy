@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:queezy/pages/search_categories_section.dart';
 import 'package:queezy/pages/search_friends_section.dart';
@@ -109,11 +111,15 @@ class _SearchTabRecentState extends State<SearchTabRecent> {
       children: [
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: SvgPicture.asset('assets/bg_discover.svg'),
+          width: double.infinity,
+          child: SvgPicture.asset(
+            'assets/bg_discover.svg',
+            fit: BoxFit.fill,
+          ),
         ),
         Positioned(
           child: SvgPicture.asset('assets/ic_dot.svg'),
-          top: 20,
+          top: 10,
           left: (MediaQuery.of(context).size.width / 2) - 3,
         ),
         Positioned(
